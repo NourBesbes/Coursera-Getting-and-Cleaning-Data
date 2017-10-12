@@ -37,7 +37,7 @@ library(reshape2)
 melteddata <- melt(combined, id=c("subjectID","activity"))
 tidydata <- dcast(melteddata, subjectID+activity ~ variable, mean)
 # write the tidy data set to a file
-write.csv(tidydata, "tidy.csv", row.names=FALSE)
+write.table(tidydata, "tidy.txt", row.names=FALSE)
 
 
 
